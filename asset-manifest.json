@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/frontendpfsii/static/css/main.f188bbde.css",
+    "main.js": "/frontendpfsii/static/js/main.1c343c1b.js",
+    "static/media/pexels-gül-işık-4102712.jpg": "/frontendpfsii/static/media/pexels-gül-işık-4102712.b6fc492d09433ff1ec6a.jpg",
+    "static/media/pexels-mikhail-nilov-9158476.jpg": "/frontendpfsii/static/media/pexels-mikhail-nilov-9158476.b6fc492d09433ff1ec6a.jpg",
+    "static/media/backgroundCadastro.jpg": "/frontendpfsii/static/media/backgroundCadastro.2aeb12f13d7f0ffaadaa.jpg",
+    "static/media/bootstrap-icons.woff?": "/frontendpfsii/static/media/bootstrap-icons.4753c5ba57962b4d7bf8.woff",
+    "static/media/bootstrap-icons.woff2?": "/frontendpfsii/static/media/bootstrap-icons.6d63d0501e5ed7b79dab.woff2",
+    "static/media/icone.png": "/frontendpfsii/static/media/icone.11c180d71ada056af47b.png",
+    "index.html": "/frontendpfsii/index.html",
+    "main.f188bbde.css.map": "/frontendpfsii/static/css/main.f188bbde.css.map",
+    "main.1c343c1b.js.map": "/frontendpfsii/static/js/main.1c343c1b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f188bbde.css",
+    "static/js/main.1c343c1b.js"
+  ]
+}
