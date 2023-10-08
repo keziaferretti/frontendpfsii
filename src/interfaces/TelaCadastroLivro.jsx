@@ -47,8 +47,7 @@ export default function TelaCadastroLivro(props){
 
     }
 
-    function buscarLivros(){
-        fetch(urlBase + "/acervos", {
+    function buscarLivros(){        fetch(urlBase + "/acervos", {
             method:"GET"
         }).then((resposta) =>{
             return resposta.json()
@@ -62,6 +61,7 @@ export default function TelaCadastroLivro(props){
                 setErro(dados.status)
             }
         })
+
 
     }    
 

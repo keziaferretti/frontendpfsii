@@ -70,15 +70,15 @@ export default function FormExemplar(props) {
             if (!resposta.ok) {
                 throw new Error('Erro na atualização');
             }
-            return resposta.json(); // Retorna os dados atualizados após a atualização bem-sucedida
+            return resposta.json(); 
         })
         .then((dadosAtualizados) => {
-            // Verifica os dados retornados pela API
+            
             if (dadosAtualizados.resultado) {
                 alert("Não foi possível atualizar o exemplar");
             } else {
                 alert("Exemplar atualizado com sucesso");
-                setExemplar(dadosAtualizados); // Atualiza o estado com os dados atualizados
+                setExemplar(dadosAtualizados);
                 setTituloSelecionado({});
                 setValidado(false);
                 props.exibirTabela(true);

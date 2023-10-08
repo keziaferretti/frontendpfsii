@@ -1,5 +1,8 @@
-.Cabecalho{
+.Cabecalho {
     color: white;
-    background: linear-gradient(rgba(0, 0, 0, .50), rgba(0, 0, 0, .50)), url(../../img/pexels-gül-işık-4102712.jpg);
+    background: linear-gradient(rgba(0, 0, 0, .50), rgba(0, 0, 0, .50)), url(../../img/pexels-huseyn-kamaladdin-667838.jpg);
     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
 }

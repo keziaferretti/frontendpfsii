@@ -70,7 +70,6 @@ export default function TelaFormExemplar(props){
         .then((dados) => {
             if (Array.isArray(dados)) {
                 setExemplar(dados);
-                exibirTabela(true);
             } else {
                 setErro(dados.status);
             }
@@ -86,7 +85,7 @@ export default function TelaFormExemplar(props){
 
     useEffect(() =>{
         buscarExemplar();
-    },[buscarExemplar])
+    },[])
 
     if (erro){
         return <div>

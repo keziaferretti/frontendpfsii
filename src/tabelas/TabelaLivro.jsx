@@ -26,7 +26,7 @@ export default function TabelaLivro(props){
     return (
         <>  <body id="corpo" className="colorwhite ">
                 <Container className="border mb-2 mt-2 corpoTabela" >
-                    <h2 className="text-center m-4 ">Livros Cadastrados</h2>
+                    <h2 className="text-center m-4 ">Titulos Cadastrados</h2>
                     <Row className='mb-2 mt-2 '>
                         <Col>
                             <Button variant="success" 

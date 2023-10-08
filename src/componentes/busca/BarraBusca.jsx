@@ -17,20 +17,27 @@ export default function BarraBusca({placeHolder,
         const [itemSelecionado, setItemSelecionado] = useState(false);
 
         function filtrarResultado() {
-            setDadosLista(dados.filter((item) => {
-                if (item[campoBusca] && termoBusca.length > 1) {
+            if (Array.isArray(dados)) {
+              setDadosLista(
+                dados.filter((item) => {
+                  if (item[campoBusca] && termoBusca.length > 1) {
                     return item[campoBusca].toLowerCase().includes(termoBusca.toLowerCase());
-                }
-                return false;
-            }));
-        
+                  }
+                  return false;
+                })
+              );
+            } else {
+              setDadosLista([]); // Defina dadosLista como uma matriz vazia se dados não for uma matriz
+            }
+          
             let componenteResultado = document.querySelector('[data-resultado]');
             if (dadosLista.length > 0) {
-                componenteResultado.style.display = 'block';
+              componenteResultado.style.display = 'block';
             } else {
-                componenteResultado.style.display = 'none';
+              componenteResultado.style.display = 'none';
             }
-        }
+          }
+          
         
         return(
             <Container>
