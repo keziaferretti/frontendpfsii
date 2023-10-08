@@ -7,7 +7,6 @@ import { urlBase } from '../utilitarios/definicoes';
 import CaixaSelecao from '../componentes/busca/CaixaSelecao';
 import TabelaItensEmprestimo from '../tabelas/TabelaItensEmprestimo';
 import { set } from 'react-hook-form';
-import { json } from 'react-router-dom';
 
 
 export default function Formulario(props) {
@@ -52,6 +51,7 @@ export default function Formulario(props) {
         setEmprestimo({ ...emprestimo, [id]: valor });
     }
 
+
     function gravarEmprestimo(emprestimo) {
 
         let listaItens = []
@@ -62,7 +62,7 @@ export default function Formulario(props) {
                 }
             })
         }
-
+    
         fetch(urlBase + "/emprestimo", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -76,21 +76,22 @@ export default function Formulario(props) {
         }).then((resposta) => resposta.json())
             .then((dados) => {
                 if (dados.resultado) {
-                    alert("Não foi possivel gravar o emprestimo")
+                    alert("Emprestimo não foi possível gravar o empréstimo");
                 }
                 else {
-                    alert("Emprestimo cadastrado com sucesso!")
+                    alert("Emprestimo cadastrado com sucesso!");
                 }
             })
     }
     
+
     const manipulaSubmissao = (evento) => {
         const form = evento.currentTarget;
 
         if (!form.checkValidity()) {
             evento.preventDefault();
             evento.stopPropagation();
-            
+
 
         }
         else {

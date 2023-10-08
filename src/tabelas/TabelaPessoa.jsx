@@ -1,4 +1,4 @@
-import { Button, Table, Form, Row, Col } from "react-bootstrap";
+import { Button, Table, Form, Row, Col} from "react-bootstrap";
 import { urlBase } from "../utilitarios/definicoes";
 import { useState } from "react";
 
@@ -7,13 +7,13 @@ export default function TabelaPessoas(props) {
   const [termoDeBusca, setTermoDeBusca] = useState('');
 
   const buscaPessoa = () => {
-    if (termoDeBusca.length === 0) {
+    if(termoDeBusca.length === 0){
       props.buscar()
-    } else {
+    }else{
       fetch(`${urlBase}/pessoas/buscar/${termoDeBusca}`)
-        .then((response) => response.json())
-        .then((data) => props.setPessoas(data))
-        .catch((error) => console.error('Erro ao buscar os dados:', error));
+      .then((response) => response.json())
+      .then((data) => props.setPessoas(data))
+      .catch((error) => console.error('Erro ao buscar os dados:', error));
     }
   };
 
@@ -32,15 +32,15 @@ export default function TabelaPessoas(props) {
 
         <Row>
           <Col className=" justify-content-end md-2">
-            <Form className="d-flex mb-2 mt-2">
-              <Form.Control
-                type="text"
-                value={termoDeBusca}
-                onChange={(e) => setTermoDeBusca(e.target.value)}
-                placeholder="Pesquisar nome da pessoa"
-              />
-              <Button className="BotaoPesquisar" type="button" onClick={buscaPessoa}>Pesquisar</Button>
-            </Form>
+          <Form className="d-flex mb-2 mt-2">
+            <Form.Control
+              type="text"
+              value={termoDeBusca}
+              onChange={(e) => setTermoDeBusca(e.target.value)}
+              placeholder="Pesquisar nome da pessoa"
+            />
+            <Button className="BotaoPesquisar" type="button" onClick={buscaPessoa}>Pesquisar</Button>
+          </Form>
           </Col>
         </Row>
 
@@ -75,10 +75,10 @@ export default function TabelaPessoas(props) {
                   <td id="colorwhite">{pessoa.cep}</td>
                   <td id="colorwhite">{pessoa.dataNasc}</td>
                   <td>
-                    <Button variant="warning" onClick={() => {
-                      if (
+                    <Button variant="warning" onClick={()=>{
+                      if(
                         window.confirm("Deseja atualizar o cadastro da pessoa?")
-                      ) {
+                      ){
                         props.editarPessoa(pessoa)
                       }
                     }}>
@@ -92,12 +92,12 @@ export default function TabelaPessoas(props) {
                       </svg>
                     </Button>{" "}
                     <Button variant="danger" onClick={() => {
-                      if (
-                        window.confirm("Deseja realmente excluir essa Pessoa?")
-                      ) {
-                        props.excluirPessoa(pessoa);
-                      }
-                    }}>
+                        if (
+                          window.confirm("Deseja realmente excluir essa Pessoa?")
+                        ){
+                          props.excluirPessoa(pessoa);
+                        }
+                        }}>
                       <svg xmlns="http://www.w3.org/2000/svg"
                         width="16"
                         height="16"

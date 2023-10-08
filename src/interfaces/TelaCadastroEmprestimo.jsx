@@ -13,7 +13,7 @@ export default function TelaFormEmprestimo(props) {
     const [modoEdicao, setModoEdicao] = useState(false);
     const [erro, setErro] = useState(null);
     const [processado, setProcessado] = useState(false);
-
+    
     function apagarEmprestimo(emprestimo) {
         fetch(urlBase + "/emprestimo", {
             method: "DELETE",
@@ -52,7 +52,7 @@ export default function TelaFormEmprestimo(props) {
 
     useEffect(() => {
         buscarEmprestimos();
-    }, []);
+    }, []); 
 
     if (erro) {
         return (
@@ -78,7 +78,7 @@ export default function TelaFormEmprestimo(props) {
                             setModoEdicao={setModoEdicao}
                             buscar={buscarEmprestimos}
                             setEmprestimos={setEmprestimos}
-                            buscarEmprestimos={buscarEmprestimos}
+                            buscarEmprestimos={buscarEmprestimos} 
                         />
                     ) : (
                         <FormEmprestimo

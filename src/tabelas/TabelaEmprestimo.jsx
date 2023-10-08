@@ -42,10 +42,12 @@ export default function TabelaEmprestimo(props) {
                         {props.listaEmprestimos?.map((emprestimo, indice) => {
                             // Converte a data de string para um objeto Date
                             const dataEmprestimo = new Date(emprestimo.dataEmprestimo);
+
                             // Obtém o dia, mês e ano da data
                             const dia = String(dataEmprestimo.getDate()).padStart(2, '0');
                             const mes = String(dataEmprestimo.getMonth() + 1).padStart(2, '0'); // Adicione 1 ao mês, pois ele é baseado em zero
                             const ano = dataEmprestimo.getFullYear();
+
                             // Formata a data como "dd/mm/yyyy"
                             const dataFormatada = `${dia}/${mes}/${ano}`;
 
