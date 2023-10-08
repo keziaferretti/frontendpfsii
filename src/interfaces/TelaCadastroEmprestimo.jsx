@@ -2,9 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Spinner } from "react-bootstrap";
 import Pagina from "../templates/componentes/Pagina.js";
 import TabelaEmprestimo from "../tabelas/TabelaEmprestimo.jsx";
-import FormEmprestimo from "../Formularios/FormEmprestimo.jsx";
+import Formulario from "../Formularios/FormEmprestimo.jsx";
 import { urlBase } from "../utilitarios/definicoes.js";
-import { set } from "react-hook-form";
 
 export default function TelaFormEmprestimo(props) {
 
@@ -81,7 +80,7 @@ export default function TelaFormEmprestimo(props) {
                             buscarEmprestimos={buscarEmprestimos} 
                         />
                     ) : (
-                        <FormEmprestimo
+                        <Formulario
                             listaEmprestimos={emprestimos}
                             setEmprestimos={setEmprestimos}
                             exibirTabela={setExibirTabela}

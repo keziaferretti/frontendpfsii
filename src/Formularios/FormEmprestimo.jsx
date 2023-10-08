@@ -81,30 +81,30 @@ export default function Formulario(props) {
                     alert("Não foi possivel gravar o emprestimo")
                 }
                 else {
-                    alert("Emprestimo cadastrado com sucesso!")
+                    window.alert("Emprestimo cadastrado com sucesso!")
+                    props.setModoEdicao(false);
+                    props.exibirTabela(true);
                 }
             })
             .catch((erro) => {
                 alert("Erro ao cadastrar o emprestimo");
                 console.error(erro);
+
             });
     }
     
     const manipulaSubmissao = (evento) => {
         const form = evento.currentTarget;
 
-        if (!form.checkValidity()) {
-            evento.preventDefault();
-            evento.stopPropagation();
-            
-
+        if (form.checkValidity()) {
+            gravarEmprestimo(emprestimo);
+            setValidado(false);
         }
         else {
-            gravarEmprestimo(emprestimo);
+            setValidado(true);
         }
-        setValidado(true);
-        return false;
-
+        evento.preventDefault();
+        evento.stopPropagation();
     };
 
 
