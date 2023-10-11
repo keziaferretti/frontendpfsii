@@ -1,7 +1,7 @@
 import FormLivro from "../Formularios/FormLivro.jsx";
 import Pagina from "../templates/componentes/Pagina.js";
 import TabelaLivro from "../tabelas/TabelaLivro.jsx";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useTransition } from "react";
 import { urlBase } from "../utilitarios/definicoes.js";
 
 
@@ -68,6 +68,13 @@ export default function TelaCadastroLivro(props){
     useEffect(()=>{
         buscarLivros();
     },[]);
+
+    useEffect(()=>{
+        if(exibirTabela){
+            buscarLivros();
+        }
+    }
+    ,[exibirTabela]);
     
     return (
             

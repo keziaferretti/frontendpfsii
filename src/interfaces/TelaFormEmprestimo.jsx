@@ -53,6 +53,12 @@ export default function TelaFormEmprestimo(props) {
         buscarEmprestimos();
     }, []); 
 
+    useEffect(() => {
+        if(exibirTabela){
+            buscarEmprestimos();
+        }
+    },[exibirTabela]);
+
     if (erro) {
         return (
             <div>

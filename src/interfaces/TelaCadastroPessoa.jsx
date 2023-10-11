@@ -71,6 +71,12 @@ export default function TelaCadastroPessoa(props) {
         buscarPessoas();
     }, []);
 
+    useEffect(() => {
+        if (exibirTabela) {
+            buscarPessoas();
+        }
+    } , [exibirTabela]);
+
     if (erro) {
         return <div>
             <p> Erro ao obter pessoas do Backend : {erro.message}</p>

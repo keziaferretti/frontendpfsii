@@ -87,6 +87,12 @@ export default function TelaFormExemplar(props){
         buscarExemplar();
     },[])
 
+    useEffect(() => {
+        if (exibirTabela) {
+          buscarExemplar();
+        }
+      }, [exibirTabela]);
+
     if (erro){
         return <div>
             <p>Erro ao obter os exemplar do Backend : {erro.message}</p>
