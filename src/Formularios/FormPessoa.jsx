@@ -58,6 +58,8 @@ export default function FormPessoa(props) {
         body: JSON.stringify(pessoa),
       }).then((resposta) => {
         window.alert("Pessoa cadastrada com sucesso!")
+        props.setModoEdicao(false);
+        props.exibirTabela(true);
       });
     }
     else {
@@ -72,17 +74,17 @@ export default function FormPessoa(props) {
   }
 
   function manipulaSubmissao(evento) {
+    evento.preventDefault();
+    evento.stopPropagation();
+
     const form = evento.currentTarget;
-    if (!form.checkValidity()) {
-      evento.preventDefault();
-      evento.stopPropagation();
+    if (form.checkValidity()) {
+      gravarDados(pessoa);
+      setValidado(false);
     }
     else {
-      gravarDados(pessoa)
+      setValidado(true);
     }
-    setValidado(true);
-
-    return false;
   }
 
   return (

@@ -26,7 +26,9 @@ export default function FormLivro(props) {
                 body: JSON.stringify(livro),
             }).then((resposta) => {
                 window.alert("Titulo gravado  com sucesso!!")
-                console.log(resposta)
+                props.setModoEdicao(false);
+                props.exibirTabela(true);               
+
             })
         } else {
             fetch(urlBase + "/acervos", {
@@ -44,17 +46,20 @@ export default function FormLivro(props) {
 
 
     function manipulaEvento(evento) {
+        evento.preventDefault();
+        evento.stopPropagation();
+
         const form = evento.currentTarget;
 
-        if (!form.checkValidity()) {
-            evento.preventDefault();
-            evento.stopPropagation();
+        if (form.checkValidity()) {
+            gravarDados(livro)
+            setValidated(false)
         }
         else {
-            gravarDados(livro)
+            setValidated(true);
+
         }
-        setValidated(true);
-        return false;
+
     };
 
     return (
