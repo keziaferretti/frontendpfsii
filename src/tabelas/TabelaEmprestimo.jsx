@@ -33,7 +33,7 @@
                                 <th>Nome</th>
                                 <th>CPF</th>
                                 <th>Categoria</th>
-                                <th>codigo Exemplar</th>
+                                <th>Codigo Exemplar</th>
                                 <th>Título Exemplar</th>
                                 <th>Ação</th>
                             </tr>

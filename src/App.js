@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import TelaCadastroLivro from "./interfaces/TelaCadastroLivro.jsx";
 import TelaFormExemplar from "./interfaces/TelaFormExemplar.jsx";
 import TelaCadastroPessoa from "./interfaces/TelaCadastroPessoa.jsx";
-import TelaFormEmprestimo from "./interfaces/TelaCadastroEmprestimo.jsx";
+import TelaFormEmprestimo from "./interfaces/TelaFormEmprestimo.jsx";
 
 
 function App() {

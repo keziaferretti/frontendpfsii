@@ -6,7 +6,6 @@ import { Row, Col } from 'react-bootstrap';
 import { urlBase } from '../utilitarios/definicoes';
 import CaixaSelecao from '../componentes/busca/CaixaSelecao';
 import TabelaItensEmprestimo from '../tabelas/TabelaItensEmprestimo';
-import { set } from 'react-hook-form';
 
 
 export default function Formulario(props) {
@@ -92,19 +91,21 @@ export default function Formulario(props) {
 
             });
     }
-    
-    const manipulaSubmissao = (evento) => {
-        const form = evento.currentTarget;
 
+    const manipulaSubmissao = (evento) => {
+        evento.preventDefault();
+        evento.stopPropagation();
+
+        const form = evento.currentTarget;
         if (form.checkValidity()) {
+            
             gravarEmprestimo(emprestimo);
             setValidado(false);
         }
         else {
             setValidado(true);
         }
-        evento.preventDefault();
-        evento.stopPropagation();
+        
     };
 
 
@@ -168,13 +169,13 @@ export default function Formulario(props) {
                     <Container>
 
                         <Row>
-                            <Col md={4}>
+                            <Col>
                                 <Form.Group className="mb-3" controlId="exemplar">
                                     <Form.Label>Selecione o Exemplar:</Form.Label>
                                     <CaixaSelecao
                                         enderecoFonteDados={`${urlBase}/exemplar`}
                                         campoChave="codigo"
-                                        campoExibicao="codigo"
+                                        campoExibicao="acervo,titulo"
                                         funcaoSelecao={setExemplarSelecionado}
                                         valor={exemplarSelecionado}
                                         id="exemplar"
@@ -182,7 +183,7 @@ export default function Formulario(props) {
                                 </Form.Group>
                             </Col>
 
-                            <Col md={7}>
+                            {/* <Col md={7}>
                                 <Form.Label>Titulo</Form.Label>
                                 <Form.Control
                                     type="text"
@@ -192,10 +193,22 @@ export default function Formulario(props) {
                                     disabled
                                     required
                                 />
-                            </Col>
+                            </Col> */}
                         </Row>
 
                         <Row>
+                            <Col md={4}>
+                                <Form.Label>Codigo</Form.Label>
+                                <Form.Control
+                                    type="text"
+                                    onChange={manipularMudanca}
+                                    value={exemplarSelecionado.codigo}
+                                    nome="exemplarSelecionado"
+                                    disabled
+                                    required
+                                />
+                            </Col>
+
                             <Col md={4}>
                                 <Form.Label>Quantidade</Form.Label>
                                 <Form.Control

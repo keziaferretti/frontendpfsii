@@ -84,7 +84,7 @@ export default function TelaFormEmprestimo(props) {
                             listaEmprestimos={emprestimos}
                             setEmprestimos={setEmprestimos}
                             exibirTabela={setExibirTabela}
-                            buscarEmprestimos={buscarEmprestimos}
+                            buscar={buscarEmprestimos}
                             modoEdicao={modoEdicao}
                             setModoEdicao={setModoEdicao}
                         />
