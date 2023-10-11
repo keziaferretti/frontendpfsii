@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/frontendpfsii/static/css/main.de0af963.css",
-    "main.js": "/frontendpfsii/static/js/main.149aba84.js",
+    "main.js": "/frontendpfsii/static/js/main.d9f7661c.js",
     "static/media/pexels-huseyn-kamaladdin-667838.jpg": "/frontendpfsii/static/media/pexels-huseyn-kamaladdin-667838.295e9c75c762edbcaa77.jpg",
     "static/media/bootstrap-icons.woff?": "/frontendpfsii/static/media/bootstrap-icons.4753c5ba57962b4d7bf8.woff",
     "static/media/bootstrap-icons.woff2?": "/frontendpfsii/static/media/bootstrap-icons.6d63d0501e5ed7b79dab.woff2",
     "static/media/icone.png": "/frontendpfsii/static/media/icone.11c180d71ada056af47b.png",
     "index.html": "/frontendpfsii/index.html",
     "main.de0af963.css.map": "/frontendpfsii/static/css/main.de0af963.css.map",
-    "main.149aba84.js.map": "/frontendpfsii/static/js/main.149aba84.js.map"
+    "main.d9f7661c.js.map": "/frontendpfsii/static/js/main.d9f7661c.js.map"
   },
   "entrypoints": [
     "static/css/main.de0af963.css",
-    "static/js/main.149aba84.js"
+    "static/js/main.d9f7661c.js"
   ]
 }
